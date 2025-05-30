@@ -1,31 +1,14 @@
 {
-  "version": 2,
-  "name": "devdavinci-showcase",
-  "builds": [
+  "rewrites": [
     {
-      "src": "showcase/index.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/showcase/index.html"
+      "source": "/",
+      "destination": "/showcase/index.html"
     },
     {
-      "src": "/index.html",
-      "dest": "/showcase/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/showcase/$1"
+      "source": "/index.html",
+      "destination": "/showcase/index.html"
     }
   ],
-  "functions": {
-    "showcase/server.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
