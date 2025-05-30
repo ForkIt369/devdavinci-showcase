@@ -1,0 +1,23 @@
+{
+  "name": "devdavinci-showcase",
+  "version": "1.0.0",
+  "description": "DDV Showcase Landing Page - Invite Only Access for Elite Builders",
+  "main": "showcase/index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "start": "node showcase/server.js",
+    "dev": "node showcase/server.js"
+  },
+  "keywords": [
+    "devdavinci",
+    "ai",
+    "development",
+    "web3",
+    "showcase"
+  ],
+  "author": "DevDaVinci",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
