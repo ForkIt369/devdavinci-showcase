@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "name": "devdavinci-showcase",
+  "builds": [
+    {
+      "src": "showcase/index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/showcase/index.html"
+    },
+    {
+      "src": "/index.html",
+      "dest": "/showcase/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/showcase/$1"
+    }
+  ],
+  "functions": {
+    "showcase/server.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}
